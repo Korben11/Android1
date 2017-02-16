@@ -3,14 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"
+            android:visible="true" />
+        <item
             android:id="@+id/nav_grades"
-            android:icon="@android:drawable/edit_text"
+            android:icon="@drawable/ic_grades"
             android:title="Grades"
             android:visible="true" />
         <item
             android:id="@+id/nav_calendar"
             android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="Calendar" />
+            android:title="Calendar"
+            android:visible="true"/>
+        <item
+            android:id="@+id/nav_draw"
+            android:icon="@drawable/ic_draw"
+            android:title="Draw"
+            android:visible="true" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"

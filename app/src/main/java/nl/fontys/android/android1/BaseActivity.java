@@ -1,6 +1,7 @@
 package nl.fontys.android.android1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -85,9 +86,11 @@ public abstract class BaseActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_grades) {
-            // Handle the camera action
+            Intent intent = new Intent(this, GradesActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_calendar) {
-
+            Intent intent = new Intent(this, CalendarActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
