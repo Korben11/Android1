@@ -14,6 +14,8 @@ public class CalendarActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getSupportActionBar().setTitle(R.string.title_calendar);
+
         ViewStub stub = (ViewStub) findViewById(R.id.content);
         stub.setLayoutResource(R.layout.content_calendar);
         View inflated = stub.inflate();

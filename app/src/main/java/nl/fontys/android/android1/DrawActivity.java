@@ -14,6 +14,8 @@ public class DrawActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getSupportActionBar().setTitle(R.string.title_draw);
+
         ViewStub stub = (ViewStub) findViewById(R.id.content);
         stub.setLayoutResource(R.layout.content_draw);
         View inflated = stub.inflate();
