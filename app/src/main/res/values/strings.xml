@@ -1,13 +1,26 @@
 <resources>
     <string name="app_name">Android1</string>
     <string name="title_home">Home</string>
+
+    <!--Grades activity stings-->
     <string name="title_grades">Grades</string>
+
+    <!--Draw activity stings-->
     <string name="title_draw">Draw</string>
+
+    <!--Calanedar activity strings-->
     <string name="title_calendar">Calendar</string>
+
+    <!--News activity stings-->
     <string name="title_news">News</string>
+
+    <!--Button event activity stings-->
+    <string name="title_button_event">OnClick event</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!--Settings menu strings-->
     <string name="action_settings">Settings</string>
 </resources>

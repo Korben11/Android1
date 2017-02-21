@@ -85,20 +85,21 @@ public abstract class BaseActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_grades) {
+        if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_grades){
             Intent intent = new Intent(this, GradesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_calendar) {
             Intent intent = new Intent(this, CalendarActivity.class);
             startActivity(intent);
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
+        } else if (id == R.id.nav_draw) {
+            Intent intent = new Intent(this, DrawActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_on_click_event){
+            Intent intent = new Intent(this, ButtonEventActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".CalendarActivity" />
         <activity android:name=".GradesActivity"></activity>
+        <activity android:name=".DrawActivity"></activity>
+        <activity android:name=".ButtonEventActivity"></activity>
     </application>
 
 </manifest>

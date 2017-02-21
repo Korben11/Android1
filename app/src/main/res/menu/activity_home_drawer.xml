@@ -5,22 +5,27 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="Home"
+            android:title="@string/title_home"
             android:visible="true" />
         <item
             android:id="@+id/nav_grades"
             android:icon="@drawable/ic_grades"
-            android:title="Grades"
+            android:title="@string/title_grades"
             android:visible="true" />
         <item
             android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_calendar"
-            android:title="Calendar"
+            android:title="@string/title_calendar"
             android:visible="true"/>
         <item
             android:id="@+id/nav_draw"
             android:icon="@drawable/ic_draw"
-            android:title="Draw"
+            android:title="@string/title_draw"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_on_click_event"
+            android:icon="@drawable/ic_click_black_24dp"
+            android:title="@string/title_button_event"
             android:visible="true" />
         <!--<item-->
             <!--android:id="@+id/nav_slideshow"-->
