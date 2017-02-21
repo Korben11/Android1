@@ -8,15 +8,15 @@
             android:title="Home"
             android:visible="true" />
         <item
-            android:id="@+id/nav_grades"
-            android:icon="@drawable/ic_grades"
-            android:title="Grades"
-            android:visible="true" />
-        <item
             android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_calendar"
             android:title="Calendar"
             android:visible="true"/>
+        <item
+            android:id="@+id/nav_grades"
+            android:icon="@drawable/ic_grades"
+            android:title="Grades"
+            android:visible="true" />
         <item
             android:id="@+id/nav_draw"
             android:icon="@drawable/ic_draw"
@@ -32,17 +32,17 @@
             <!--android:title="Tools" />-->
     </group>
 
-    <!--<item android:title="Communicate">-->
-        <!--<menu>-->
-            <!--<item-->
-                <!--android:id="@+id/nav_share"-->
-                <!--android:icon="@drawable/ic_menu_share"-->
-                <!--android:title="Share" />-->
+    <item android:title="Authentification">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_person"
+                android:title="Login/Log out Example" />
             <!--<item-->
                 <!--android:id="@+id/nav_send"-->
                 <!--android:icon="@drawable/ic_menu_send"-->
                 <!--android:title="Send" />-->
-        <!--</menu>-->
-    <!--</item>-->
+        </menu>
+    </item>
 
 </menu>

@@ -91,7 +91,9 @@ public abstract class BaseActivity extends AppCompatActivity
         } else if (id == R.id.nav_calendar) {
             Intent intent = new Intent(this, CalendarActivity.class);
             startActivity(intent);
-//        } else if (id == R.id.nav_slideshow) {
+       } else if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
 //
 //        } else if (id == R.id.nav_manage) {
 //
