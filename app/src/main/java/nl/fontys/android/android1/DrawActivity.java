@@ -19,15 +19,29 @@ import android.widget.Button;
 public class DrawActivity extends BaseActivity {
 
     private Paint paint = new Paint();
+    private Paint paintCircle = new Paint();
     private Path path = new Path();
+    private Path pathSave = new Path();
 
-    public DrawActivity(Context context, AttributeSet attrs){
+    public SingleTouchEventView(Context context, AttributeSet attrs) {
+        super(context, attrs);
 
         paint.setAntiAlias(true);
         paint.setStrokeWidth(6f);
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.MITER);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paintCircle.setAntiAlias(true);
+        paintCircle.setStrokeWidth(20);
+        paintCircle.setColor(Color.LTGRAY);
+        paintCircle.setStyle(Paint.Style.STROKE);
+        paintCircle.setStrokeJoin(Paint.Join.ROUND);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        canvas.drawPath(path, paint);
+        canvas.drawPath(pathSave ,paintCircle);
     }
 
     @Override
@@ -41,18 +55,20 @@ public class DrawActivity extends BaseActivity {
                 return true;
             case MotionEvent.ACTION_MOVE:
                 path.lineTo(eventX, eventY);
+                pathSave.reset();
+                pathSave.addCircle(eventX, eventY, 50, Path.Direction.CW);
                 break;
             case MotionEvent.ACTION_UP:
+                pathSave.reset();
                 break;
             default:
                 return false;
         }
-        final Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                path.reset();
-            }
-        });
+
+        // Schedules a repaint.
+        invalidate();
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
