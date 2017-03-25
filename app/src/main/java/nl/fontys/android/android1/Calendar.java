@@ -10,14 +10,25 @@ public class Calendar {
     private String courseName;
     private String duration;
     private String location;
+    private String start;
+    private String end;
 
-    public  Calendar
 
-    public Calendar(String teacherName, String courseName, String duration, String location){
+    public String getStart() {
+        return start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public Calendar(String teacherName, String courseName, String start, String end, String location){
         this.teacherName=teacherName;
         this.courseName=courseName;
-        this.duration=duration;
         this.location=location;
+        this.start = start;
+        this.end = end;
+
     }
 
     public String getTeacherName() {

@@ -21,6 +21,7 @@
         <activity android:name=".GradesActivity"></activity>
         <activity android:name=".DrawActivity"></activity>
         <activity android:name=".ButtonEventActivity"></activity>
+        <activity android:name=".AuthenticationActivity"></activity>
     </application>
 
 </manifest>

@@ -100,6 +100,9 @@ public abstract class BaseActivity extends AppCompatActivity
         } else if (id == R.id.nav_on_click_event){
             Intent intent = new Intent(this, ButtonEventActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_login){
+            Intent intent = new Intent(this, AuthenticationActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

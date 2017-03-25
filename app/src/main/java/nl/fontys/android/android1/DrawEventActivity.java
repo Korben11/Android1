@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -19,9 +21,13 @@ public class DrawEventActivity extends View {
     private Paint paintCircle = new Paint();
     private Path path = new Path();
     private Path pathSave = new Path();
+    Context context;
+    GestureDetector gestureDetector;
 
     public DrawEventActivity(Context context, AttributeSet attrs) {
         super(context, attrs);
+        gestureDetector = new GestureDetector(context, new GestureListener());
+        this.context = context;
 
         paint.setAntiAlias(true);
         paint.setStrokeWidth(6f);
@@ -39,6 +45,23 @@ public class DrawEventActivity extends View {
     protected void onDraw(Canvas canvas) {
         canvas.drawPath(path, paint);
         canvas.drawPath(pathSave, paintCircle);
+    }
+
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
+        // event when double tap occurs
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            float x = e.getX();
+            float y = e.getY();
+            Log.d("Double Tap", "Tapped at: (" + x + "," + y + ")");
+
+            // clean drawing area on double tap
+            path.reset();
+            pathSave.reset();
+
+            return true;
+        }
+
     }
 
     @Override
@@ -62,6 +85,7 @@ public class DrawEventActivity extends View {
                 return false;
         }
 
+        gestureDetector.onTouchEvent(event);
         // Schedules a repaint.
         invalidate();
         return true;

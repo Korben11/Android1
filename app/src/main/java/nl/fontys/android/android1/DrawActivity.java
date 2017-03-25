@@ -12,8 +12,6 @@ import android.widget.RelativeLayout;
 
 public class DrawActivity extends BaseActivity {
 
-    private RelativeLayout drawSurface;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +21,5 @@ public class DrawActivity extends BaseActivity {
         ViewStub stub = (ViewStub) findViewById(R.id.content);
         stub.setLayoutResource(R.layout.content_draw);
         View inflated = stub.inflate();
-
-        drawSurface = (RelativeLayout) findViewById(R.id.draw);
-
-        setContentView(new DrawEventActivity(drawSurface.getContext(), null));
     }
 }

@@ -1,25 +1,24 @@
 package nl.fontys.android.android1;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
-import android.widget.ListView;
 
-import java.util.List;
+/**
+ * Created by Korben on 23.3.2017.
+ */
 
-public class GradesActivity extends BaseActivity implements TokenFragment.OnFragmentInteractionListener{
-//public class GradesActivity extends BaseActivity{
+public class AuthenticationActivity extends BaseActivity implements TokenFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setTitle(R.string.title_grades);
+        getSupportActionBar().setTitle("Authentication");
 
         ViewStub stub = (ViewStub) findViewById(R.id.content);
-        stub.setLayoutResource(R.layout.content_grades);
+        stub.setLayoutResource(R.layout.content_authentication);
         View inflated = stub.inflate();
     }
 
