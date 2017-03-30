@@ -56,24 +56,28 @@ public class GradesTask  extends AsyncTask<String,Void,ArrayList<Grades>>{
                     if(jsonReader.peek() == BEGIN_OBJECT){
                         jsonReader.beginObject();
                         String date="",item="";
-                        int grade=0; boolean passed = false;
+                        double grade=0; boolean passed = false;
                         while(jsonReader.hasNext()){
-                          String name = jsonReader.nextName();
-                            if(name.equals("date")&& jsonReader.peek()==STRING){
-                             date = jsonReader.nextString();
-                            } else if (name.equals("item")&& jsonReader.peek()==STRING){
+                            String name = jsonReader.nextName();
+                            if(name.equals("date") && jsonReader.peek() == STRING){
+                                date = jsonReader.nextString();
+                            } else if (name.equals("item") && jsonReader.peek() == STRING){
                                 item = jsonReader.nextString();
-                            } else if (name.equals("grade") && jsonReader.peek()==NUMBER){
-                                grade = jsonReader.nextInt();
-                            } else if (name.equals("passed") && jsonReader.peek()==BOOLEAN){
+                            } else if (name.equals("grade") && jsonReader.peek() == NUMBER){
+                                grade = jsonReader.nextDouble();
+                            } else if (name.equals("passed") && jsonReader.peek() == BOOLEAN){
                                 passed = jsonReader.nextBoolean();
                             } else {
                                 jsonReader.skipValue();
                             }
                         }
+
                         grades.add(new Grades(item,date,grade,passed));
+
                         jsonReader.endObject();
                     }
+                    else
+                        jsonReader.skipValue();
                 }
                 jsonReader.endArray();
             }

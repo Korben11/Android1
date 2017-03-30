@@ -10,8 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nl.fontys.android.android1.GradesActivity">
 
-    
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
@@ -22,6 +20,5 @@
         android:layout_height="wrap_content"
         android:name="nl.fontys.android.android1.TokenFragment"
         android:id="@+id/fragment2" />
-
 
 </RelativeLayout>
